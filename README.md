@@ -51,5 +51,6 @@ Can you differentiate between traditional MVC applications and Web APIs? Briefly
 Bottlenecks (Encountered): (Yes/No and Briefly Explain)
 
 Have you encountered any performance challenges with traditional MVC applications compared to Web APIs? If so, briefly describe the scenario(s). (e.g., Frequent page refreshes causing performance overhead, complex data exchange requiring a more lightweight approach)
+
  Yes, performance challenges with traditional MVC applications compared to Web APIs include frequent page refreshes causing performance overhead and slower user experiences. Additionally, complex data exchanges can become cumbersome, as traditional MVC requires more resources to render and send entire views. 
  In such scenarios, Web APIs offer a more lightweight and efficient approach, delivering only the necessary data, thus reducing load times and improving performance.
