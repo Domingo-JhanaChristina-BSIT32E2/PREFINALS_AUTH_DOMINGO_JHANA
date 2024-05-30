@@ -1,32 +1,42 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PREFINALS_AUTH_DOMINGO_JHANA.Models;
-using System.Diagnostics;
 
-namespace PREFINALS_AUTH_DOMINGO_JHANA.Controllers
+[Route("api/[controller]")]
+[ApiController]
+public class AboutController : ControllerBase
 {
-    public class HomeController : Controller
+    private static readonly string[] RandomFacts = new[]
     {
-        private readonly ILogger<HomeController> _logger;
+        "Loves to code.",
+        "Enjoys hiking.",
+        "Fan of science fiction.",
+        "Likes to cook.",
+        "Avid reader."
+    };
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+    private readonly string owner = "Repository Owner";
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+    [HttpGet("me")]
+    public IActionResult GetRandomFact()
+    {
+        var random = new Random();
+        var randomFact = RandomFacts[random.Next(RandomFacts.Length)];
+        return Ok(new { Fact = randomFact });
+    }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+    [HttpGet]
+    public IActionResult GetOwner()
+    {
+        return Ok(new { Owner = owner });
+    }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    [HttpPost]
+    public IActionResult PostName([FromBody] NameModel model)
+    {
+        return Ok(new { Message = $"Hi {model.Name} from {owner}" });
+    }
+
+    public class NameModel
+    {
+        public string Name { get; set; }
     }
 }
