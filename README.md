@@ -17,6 +17,7 @@ Onion Architecture:
 Benefits: (1-3 keywords)
 
 Briefly list some key benefits of using Onion Architecture in .NET Core projects. (e.g., separation of concerns, testability)
+
  -Onion Architecture in .NET Core projects offers several key benefits, including a strong separation of concerns, which ensures that business logic, data access, and presentation layers are clearly delineated. 
  This separation enhances testability, allowing for isolated unit testing of the core business logic without dependencies on external systems. 
  Additionally, Onion Architecture promotes maintainability by organizing code into layers that can be developed, updated, and replaced independently. 
@@ -26,6 +27,7 @@ Briefly list some key benefits of using Onion Architecture in .NET Core projects
 Bottlenecks (Encountered): (Yes/No and Briefly Explain)
 
 Have you encountered any challenges with Onion Architecture in your projects? If so, briefly describe the bottleneck(s). (e.g., Increased complexity for simple projects, difficulty finding developers familiar with the pattern)
+ 
  Yes, some challenges with Onion Architecture include increased complexity for simple projects, as its layered structure can be overkill. 
  The steep learning curve and need for developers familiar with dependency inversion can also be a bottleneck. Additionally, the initial setup time is time-consuming, 
  potentially leading to longer development times and higher costs, especially in the early stages.
@@ -33,18 +35,21 @@ Have you encountered any challenges with Onion Architecture in your projects? If
 *MVC: 
 Components: (1-3 keywords each)  
 Briefly describe the roles of the Model, View, and Controller in the MVC pattern.
+ 
  In the MVC pattern, the **Model** represents the application's data and business logic, managing data and ensuring its consistency. The **View** is responsible for displaying the data provided by the model, presenting it to the user in a specific format. 
  The **Controller** acts as an intermediary, handling user input, updating the model based on that input, and selecting the appropriate view to display the updated data.
  Together, they ensure a clear separation of concerns, enhancing maintainability and scalability.
 
 Bottlenecks (Encountered): (Yes/No and Briefly Explain)
 Have you encountered any challenges with tight coupling between Model and Controller in MVC projects? If so, briefly describe the issue(s). (e.g., Difficulty in unit testing controllers, logic changes rippling through the application)
+
 Yes, challenges with tight coupling between the Model and Controller in MVC projects include difficulty in unit testing controllers, as tightly coupled components can make it hard to isolate and test individual parts. Additionally, logic changes in the model can ripple through the application, requiring updates to controllers and potentially views, 
 leading to increased maintenance effort and higher risk of introducing bugs.
 
 *Web API:
 Differences from MVC: (Yes/No and Briefly Explain)
 Can you differentiate between traditional MVC applications and Web APIs? Briefly explain the main difference.
+ 
  The main difference between traditional MVC applications and Web APIs is their purpose and output. MVC applications generate and render views (HTML/CSS/JavaScript) for user interfaces, while Web APIs provide data services, returning data in formats like JSON or XML without rendering a UI. This makes Web APIs more suitable for serving various clients, 
  enabling greater flexibility and decoupled architectures.
 
